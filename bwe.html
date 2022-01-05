@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head><title>BWE</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+  <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
+  <meta name="keywords" content="BMTC bus info">
+  <meta name="description" content="BigWheelsExolorer">
+  <meta property="og:image" content="C:\Users\Sudesh\Pictures\l.gif">
+  <meta property="og:image:type" content="image/gif">
+  <meta property="og:image:width" content="200">
+  <meta property="og:image:height" content="100">
+  <meta property="og:image" content="C:\Users\Sudesh\Pictures\new.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="700">
+  <meta property="og:image:height" content="75">
+  <meta property="og:title" content="BigWheelsExplorer">
+  <meta property="og:description" content="BMTC bus info">
+<style>
+
+h1{
+    display:inline-block;
+   
+}
+H2{
+  color:darkslateblue;
+  font-size:20px;
+  text-align:center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+.p1{
+  float:right;
+  margin:15px;
+  color:white;
+}
+.p2{
+  margin-top:2px;
+  padding:20px;
+}
+a:link, a:visited {
+  background-color:lightslategray ;
+  font-family:Lucida Sans Unicode;
+  color: white;
+  padding: 14px 25px;
+  border-color:5px midnightblue;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color:#f2f2f2;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #f2f2f2;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color:slateblue;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 22px;
+  font-size: 23px;
+  margin-left: 45px;
+}
+
+.openbtn {
+  font-size: 10px;
+  cursor: pointer;
+  margin-top:50px;
+  background-color:dodgerblue;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: midnightblue;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 10px;
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 10px;}
+  .sidebar a {font-size: 15px;}
+}
+
+
+a:hover, a:active {
+  background-color:dodgerblue;
+}
+.collapsible {
+  background-color:white;
+  color:darkslateblue;
+  font-size:70px;
+  font-family: 'Lucida Grande';
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color:lightskyblue;
+}
+
+.content {
+  padding: 50px 30px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+}
+* {box-sizing:border-box}
+
+.mySlides {display:none}
+
+.slideshow-container {
+  max-width: 650px;
+  height:350px;
+  position: relative;
+  margin: auto;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 12px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+input[type=text], input[type=password]{
+  color:midnightblue;
+  background-color: #ece8e8;
+  font-family: cursive;
+  font-size:20px;
+  padding:10px;
+  margin-left:10px;
+  height:200px;
+  width:600px;
+  border:2px mediumblue;
+
+}
+.p3{
+  color:darkviolet;
+  background-color: #f2f2f2;
+  font-size:20px;
+  font-family:monospace;
+}
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background-color: dodgerblue;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color:midnightblue;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  background-color:dogerblue;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+  </style>
+</head>
+    <body>
+      
+        <h1><img src="images/l.gif" alt="logo" style="float:left;height:230px;width:320px;padding:36px;"><img src="images/tit.png" alt="title" style="height:230px;float:right;width:1053px; padding:20px;"></h1>
+        
+           
+        <div class="p1"><a href="log.html" target="_parent">LOGIN</a> <a href="signin.html" target="_parent">SIGNIN</a></div>
+        <div id="mySidebar" class="sidebar">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+          <a href="location.html">BUS DETAILS</a>
+          <a href="signin.html">SIGNIN</a>
+          
+          <a href="log.html">LOGIN</a>
+        </div>
+        
+        <div id="main">
+          <button class="openbtn" onclick="openNav()">☰ MENU</button>  
+        </div>
+        
+        <script>
+        function openNav() {
+          document.getElementById("mySidebar").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidebar").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+        }
+        </script>
+        <div class="p2">
+          <center> <a href="location.html" style="background-color: white;padding:none;border-radius: 10px;" title="enter your location">
+           <img src="images/happy.gif" alt="bus" style="height:400px;width:770px;background-color:white;margin-right:auto;display:block">
+          </a> </center>     
+       </div>
+        <button type="button" class="collapsible" style="font-size:30px"><img src="images/us.png" style="height:120px;margin-left:600px"></button>
+        <div class="content">
+          <div id="slideshow1" class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 2</div>
+              <img src="images/1.1s.gif" style="width:100%">
+              <div class="text">PROBLEM STATEMENT</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 2</div>
+              <img src="images/1.2s.gif" style="width:100%">
+              <div class="text">BWE</div>
+            </div>
+            
+            
+            <a class="prev" onclick="plusSlides(-1,slideshow1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, slideshow1)">&#10095;</a>
+            
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1, slideshow1)"></span> 
+              <span class="dot" onclick="currentSlide(2, slideshow1)"></span> 
+              
+            </div>
+            </div>
+            <br>
+            
+            
+           
+        </div>
+        <button type="button" class="collapsible" style="font-size:30px"><img src="images/enun.png" style="height:100px;margin-left:600px"></button>
+        <div class="content">
+          <img src="images/2.1s.gif" style="width:650px;height:400px;padding:20px;margin-left: 389px">
+            
+            </div>
+        <button type="button" class="collapsible" style="font-size:30px"><img src="images/w.png" style="height:100px;margin-left:600px"></button>
+        <div class="content">
+          <p>
+            <img src="images/steps.png" style="padding: 20px;height:400px;width:700px;float:left">
+            <video style="float:right;padding: 20px;height:400px;width:700px" controls>
+              <source src="images/working.mp4" type="video/mp4" >
+              <source src="images/working.mp4" type="video/ogg">
+              Your browser does not support HTML video.
+           </video>
+        </p>
+                
+       </div>
+        
+        
+        <button type="button" class="collapsible" style="font-size:30px"><img src="images/goals.png" style="height:100px;margin-left:600px"></button>
+         <div class="content">
+          <div id="slideshow2" class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="images/3.1s.gif" style="width:100%">
+              <div class="text">DELINEATION</div>
+            </div>
+            
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="images/3.2s.gif" style="width:100%">
+              <div class="text">CONTD....</div>
+            </div>
+            
+            
+            <a class="prev" onclick="plusSlides(-1,slideshow2)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1, slideshow2)">&#10095;</a>
+            
+            
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1, slideshow2)"></span> 
+              <span class="dot" onclick="currentSlide(2, slideshow2)"></span> 
+              
+            </div>
+            </div>
+            <br>
+            
+            
+        </div>
+      <button type="button" class="collapsible" style="font-size:30px"><img src="images/rev.png" style="height:100px;;margin-left:600px"></button>
+      <div class="content">
+        <h2>YOUR VALUABLE FEEDBACK WILL BE APPRECIATED!!</h2>
+        <center>
+         <form method="post">
+         
+          <input type="text"  placeholder="write your views about the working of our website......" name="Review " id="mypopup()" required>
+         
+         
+         <br><br>
+         <div class="popup" onclick="myFunction()">
+          <button type="submit"style="height:50px;width70px;padding:16px;background-color:darkslategray;color:white;cursor:pointer" onclick="myfunction()">SUBMIT</button>
+            <span class="popuptext" id="myPopup">Your response has been recorded!</span>
+          </div>
+          
+          <script>
+          // When the user clicks on div, open the popup
+          function myFunction() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+          }
+          </script>
+         </form>
+        </center>
+         <p class="p3">Your essential feedback will be recorded and our team will try their best to accomplish your requirements....</p>
+          
+          </div>
+        <script>
+          var slideshow1 = document.getElementById("slideshow1");
+          slideshow1.currentSlideIndex = 1;
+          showSlides(slideshow1.currentSlideIndex, slideshow1);
+
+          var slideshow2 = document.getElementById("slideshow2");
+          slideshow2.currentSlideIndex = 1;
+          showSlides(slideshow2.currentSlideIndex, slideshow2);
+          
+          function plusSlides(n, slideshow) {
+             showSlides(slideshow.currentSlideIndex += n, slideshow);
+         }
+
+          function currentSlide(n, slideshow) {
+             showSlides(slideshow.currentSlideIndex = n, slideshow);
+          }
+
+         function showSlides(n, slideshow) {
+  
+
+
+           var i;
+           var slides = slideshow.getElementsByClassName("mySlides");
+           var dots = slideshow.getElementsByClassName("dot");
+           if (n > slides.length) {slideshow.currentSlideIndex = 1}    
+           if (n < 1) {slideshow.currentSlideIndex = slides.length}
+           for (i = 0; i < slides.length; i++) {
+             slides[i].style.display = "none";  
+            }
+           for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+           slides[slideshow.currentSlideIndex-1].style.display = "block";  
+           dots[slideshow.currentSlideIndex-1].className += " active";
+          }
+        </script>
+      <script>
+          var coll = document.getElementsByClassName("collapsible");
+          var i;
+          
+          for (i = 0; i < coll.length; i++) 
+          {
+            coll[i].addEventListener("click", function() {
+              this.classList.toggle("active");
+              var content = this.nextElementSibling;
+              if (content.style.display === "block") {
+                content.style.display = "none";
+              } else {
+                content.style.display = "block";
+              }
+            });
+          }
+      </script>
+        
+       
+        
+      </body>
+  </html>
