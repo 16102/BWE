@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <style>   
+        Body {  
+          display:block;
+          font-family:  'Lucida Grande', 'Lucida Sans Unicode';  
+          background-color:white;  
+        } 
+        h1{
+          margin-right:150px;
+          margin-left:198px;
+          display:inline-block;
+   
+        }
+       
+        button {   
+               background-color:dodgerblue;   
+               width: 30%;  
+                color: white;   
+                margin: 15px;  
+                border: 2px midnightblue;
+                border-color: midnightblue;   
+                cursor: pointer;
+                font-size: 120%; 
+                padding:15px 10px;
+                align-content: center;
+                 margin-top: 7px;
+                 margin-bottom: 15px;
+                 margin-right: 250px;
+                 margin-left: 320px;
+             }   
+         
+             div {
+            height: 550px;
+            width: 75%;
+            align-content: center;
+             
+           }   
+           input[type=text], input[type=password] {
+               float: right;
+           }
+         input[type=text], input[type=password] {  
+                width:85%;  
+                margin: 2px 0; 
+                margin-right:30px;
+                padding: 12px 20px;   
+                display: inline-block; 
+                border: 1px solid midnightblue;   
+                box-sizing:border-box; 
+                background-color:#ebe6e6;   
+            } 
+            
+         button:hover {   
+                background-color: lightslategray;   
+            }   
+          
+            .container {   
+                padding:30px; 
+                background-color:rgb(230, 246, 253);
+                font-size: 100%;
+                margin-left: 245px;
+                margin-right: 190px;
+                margin-bottom: 0px;
+                display:inline-block;
+            }   
+        </style>   
+</head>
+<body>
+    <h1><img src="images/l.gif" alt="logo" style="float:left;height:170px;width:220px;padding:36px;"><img src="images/tit.png" alt="title" style="height:160px;float:right;width:630px; padding:20px;"></h1>
+    
+    <div>  
+        <div class="container">
+            <center> <h2 style="color:#858376;font-size: 300%;background-color: rgb(219, 230, 250);">LogIn</h2> </center>    
+            <label style="color:#004aad;" >Username : </label>   
+            <h2><input type="text" placeholder="Enter Username" name="username" id="name" required><br/></h2> 
+            <label style="color:#004aad;">Password : </label> 
+            <h2><input type="password" placeholder="Enter Password" name=" " id="pwd1"  title=" least 6 or more characters" onfocus="message()" required></br></h2> 
+            <center><p id="msg" style="color:blueviolet;display:none;">(the password should contain 6 charecters)</p></center>
+            Forgot <a href="login1.html" style="color: blue;"> password? </a></br></br>
+            New to BWE?<a href="signin.html" style="color: blue;">Signin</a></br>
+            <button type="submit" onclick="login()">LogIn</button> 
+
+        </div>   
+    </div>
+    
+    <script>
+        var myInput = document.getElementById("pwd1");
+        myInput.onfocus = function() {
+        document.getElementById("msg").style.display = "block";
+    }
+        var myInput = document.getElementById("pwd1");
+        myInput.onblur = function() {
+        document.getElementById("msg").style.display = "none";
+       }
+       
+
+
+    
+        function login()
+        {
+            var uname = document.getElementById("name").value;
+            var pwd = document.getElementById("pwd1").value;
+           // var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if(uname =='')
+            {
+                alert("Please enter user name.");
+            }
+            else if(pwd=='')
+            {
+            alert("Enter the password");
+            }
+            
+            else if(pwd.length < 6 || pwd.length > 6)
+            {
+                alert("Password min and max length is 6.");
+            }
+            else
+            {
+        alert('Thank You for logging into BWE');
+      //Redirecting to other page or webste code or you can set your own html page.
+           window.location = "bwe.html";
+                }
+        }
+        //Reset Inputfield code.
+        //function clearFunc()
+        /*{
+            document.getElementById("name").value="";
+            document.getElementById("pwd1").value="";
+        }*/
+        </script> 
+        
+</body>
+</html>
